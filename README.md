@@ -23,13 +23,13 @@ Task Storager is a simple and intuitive web application built with Django that a
 
 ![screenshot_mobile view](./Screenshots/Screenshot1.png)
 ### Links
-
+- About Django visit: [Django](https://docs.djangoproject.com/en/5.0/)
 - About me: [uvarajan.d](https://uvarajand.github.io/uvarajan/)
 
 ## My process
 
 ### Built with
-
+- Python Django setup
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
