@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Storager</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap" rel="stylesheet">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/index.css'%}">
+        <link rel="icon" href="{% static 'images/task.png'%}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="profile">
+                <img src="{% static 'images/task.png'%}">
+                <div class="Task_Storager">Task Storager</div>
+                <!-- <div class="About">About</div> -->
+            </div>
+            <div class="box">
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == 'warning' %}
+                            <div class="wrning">
+                                {{message}}
+                            </div>
+                        {% else %}
+                            <div class="sucess">
+                                {{message}}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="content">
+                <div class="task_container">
+                    {% block content %}
+                        <form class="default" action="add" method="POST" autocomplete="off">
+                            {% csrf_token %}    
+                            <input type="text" name="task" placeholder="Enter your task here: ">
+                            <button type="submit">Add</button>
+                        </form>
+                    {% endblock %}
+                    
+                </div>
+                <div class="task_display">
+                    {% if Datas %}
+                        {% for data in Datas %}
+                            <div class="division">
+                                <div class="task">
+                                    <div class="contain">
+                                        <div class="time">{{data.Time}}</div>
+                                        <div class="time">Task {{forloop.counter}}</div>
+                                        <form  action="update" method="post">{% csrf_token %}<input  type="text" value="{{data.id}}" name="id" hidden> <button class="edit" type="submit" >Edit</button></form>
+                                        <a href="delete/{{data.id}}"><button class="delete" >Delete</button></a>
+                                    </div>
+                                    <div class="task-content">
+                                        {{data.Task_Name}}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% if updateDatas %}
+                
+                        <div class="division">
+                            <div class="task" >
+                                <form class="update_form" action="updatedata/{{updateDatas.id}}" method="post">
+                                {% csrf_token %}
+                                <div class="contain_update">
+                                    <div class="time">{{updateDatas.Time}}</div>
+                                    <!-- <div class="time">Task {{forloop.counter}}</div> -->
+                                    <!-- <a href="updatedata/{{updateDatas.id}}"></a> -->
+                                    <button class="edit" type="submit">Save</button>
+                                    <!-- <a href="delete/{{data.id}}"><button class="delete" >Delete</button></a> -->
+                                </div>
+                                <div class="task-content">
+                                    <input name="task_name" type="text" value="{{updateDatas.Task_Name}}">
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    {% endif %}
+                </div>
+            </div>
+            <div class="information">done by <span>&#128640;</span><span><a href="https://www.linkedin.com/in/uvarajan-dev">d.uvarajan</a></span></div>
+        </div>
+    </body>
+</html>
