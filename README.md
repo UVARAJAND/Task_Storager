@@ -9,8 +9,9 @@ Task Storager is a simple and intuitive web application built with Django that a
   - [Links](#links)
 <!-- - [My process](#my-process) -->
   - [Built with](#built-with)
+- [Installation](#installation)
   <!-- - [What I learned](#what-i-learned) -->
-  - [Continued development](#continued-development)
+  <!-- - [Continued development](#continued-development) -->
   <!-- - [Useful resources](#useful-resources) -->
 - [Author](#author)
 <!-- - [Acknowledgments](#acknowledgments) -->
@@ -54,30 +55,35 @@ Task Storager is a simple and intuitive web application built with Django that a
     ```bash
     pip install -r requirements.txt
     ```
-
-5. **Set up the database:**
-
-    - Run migrations to set up the database schema:
-
-        ```bash
-        python manage.py migrate
-        ```
-
-6. **Create a superuser (optional):**
-
-    ```bash
-    python manage.py createsuperuser
-    ```
-
-7. **Run the development server:**
+3. **Run the development server:**
 
     ```bash
     python manage.py runserver
     ```
 
-8. **Access the application:**
+4. **Access the application:**
 
-    Open your web browser and go to `http://127.0.0.1:8000/`.
+    Open your web browser and go to `http://127.0.0.1:8000/`.`
+
+## **To see the tasks stored in the database**
+
+1. **Create a superuser (optional):**
+
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+2. **Django admin panel**
+
+    Open your web browser and go to `http://127.0.0.1:8000/admin`.
+
+3. **Admin credentials**
+    ```bash
+    default={
+        username:"uvarajan";
+        password:123456789;
+    }
+    ```
 
 ## Author
 
