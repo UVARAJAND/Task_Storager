@@ -66,6 +66,20 @@ Task Storager is a simple and intuitive web application built with Django that a
     Open your web browser and go to `http://127.0.0.1:8000/`.`
 
 ## **To see the tasks stored in the database**
+1. **Default Admin Credentials**
+     
+     Open your web browser and go to `http://127.0.0.1:8000/admin`.
+     
+     Enter the credentials give below.
+
+    ```bash
+    default={
+        username:"uvarajan";
+        password:123456789;
+    }
+    ```
+
+## Creating a new Admin credentials
 
 1. **Create a superuser (optional):**
 
@@ -76,14 +90,6 @@ Task Storager is a simple and intuitive web application built with Django that a
 2. **Django admin panel**
 
     Open your web browser and go to `http://127.0.0.1:8000/admin`.
-
-3. **Admin credentials**
-    ```bash
-    default={
-        username:"uvarajan";
-        password:123456789;
-    }
-    ```
 
 ## Author
 
